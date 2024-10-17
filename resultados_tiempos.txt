@@ -1,0 +1,2 @@
+Ordenamiento Burbuja: 12.311036 segundos
+Quicksort: 0.056213 segundos

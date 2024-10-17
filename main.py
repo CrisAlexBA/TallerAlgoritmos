@@ -1,7 +1,7 @@
 import time
 import matplotlib.pyplot as plt  # Para graficar los resultados
-from burbuja import ordenamiento_burbuja
-from quicksort import quicksort
+from burbuja import bubbleSort
+from quicksort import quickSort
 from stoogeSort import stoogesort
 from pigeonholeSort import pigeonhole_sort
 from mergeSort import merge_sort
@@ -13,7 +13,7 @@ from generarArreglo import generar_y_guardar_arreglo  # Importar la función par
 def medir_ordenamiento_burbuja(nombre_archivo):
     arreglo = cargar_arreglo_desde_archivo(nombre_archivo)
     tiempo_inicio = time.time()
-    ordenamiento_burbuja(arreglo)
+    bubbleSort(arreglo)
     tiempo_fin = time.time()
     tiempo_total = tiempo_fin - tiempo_inicio
     return tiempo_total
@@ -22,7 +22,7 @@ def medir_ordenamiento_burbuja(nombre_archivo):
 def medir_quicksort(nombre_archivo):
     arreglo = cargar_arreglo_desde_archivo(nombre_archivo)
     tiempo_inicio = time.time()
-    quicksort(arreglo)
+    quickSort(arreglo, 0, len(arreglo)-1)
     tiempo_fin = time.time()
     tiempo_total = tiempo_fin - tiempo_inicio
     return tiempo_total
