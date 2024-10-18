@@ -1,3 +1,5 @@
+Ordenamiento Stooge: N/A
+Ordenamiento Burbuja: N/A
 Ordenamiento Bitonic: 39.420408 segundos
 Ordenamiento Merge: 8.282041 segundos
 Quicksort: 5.911363 segundos
