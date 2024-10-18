@@ -1,0 +1,5 @@
+Ordenamiento Burbuja: 1288.197884 segundos
+Ordenamiento Pigeonhole: 7.132408 segundos
+Ordenamiento Bitonic: 3.496777 segundos
+Ordenamiento Merge: 0.935159 segundos
+Quicksort: 0.619228 segundos
