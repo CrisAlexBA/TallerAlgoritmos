@@ -1,0 +1,4 @@
+Busqueda lineal : 0.196380 segundos
+Busqueda lineal limitada : 0.048112 segundos
+Busqueda por saltos : 0.001002 segundos
+Busqueda binaria : 0.000999 segundos

@@ -1,3 +1,4 @@
+Ordenamiento Stooge: N/A
 Ordenamiento Burbuja: 1288.197884 segundos
 Ordenamiento Pigeonhole: 7.132408 segundos
 Ordenamiento Bitonic: 3.496777 segundos

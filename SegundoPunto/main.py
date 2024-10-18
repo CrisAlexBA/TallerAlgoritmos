@@ -1,7 +1,7 @@
 import time
 import matplotlib.pyplot as plt  # Para graficar los resultados
 from cargarArreglo import cargar_arreglo_desde_archivo
-from generarArreglo import generar_y_guardar_arreglo  # Importar la función para generar el arreglo
+from generarArreglo import generar_y_guardar_arreglo, ordenar_con_quicksort, guardar_arreglo_ordenado  # Importar la función para generar el arreglo
 from lineal import busqueda_lineal
 from lineal_limitado import busqueda_lineal_limitada
 from binario import busqueda_binaria
@@ -11,7 +11,7 @@ from porSaltos import busqueda_por_saltos
 def medir_busqueda_lineal(nombre_archivo):
     arreglo = cargar_arreglo_desde_archivo(nombre_archivo)
     tiempo_inicio = time.time()
-    r = busqueda_lineal(arreglo, 60671341)
+    r = busqueda_lineal(arreglo, 99982068)
     print(f"tiempo 1: {r}")
     tiempo_fin = time.time()
     tiempo_total = tiempo_fin - tiempo_inicio
@@ -21,7 +21,7 @@ def medir_busqueda_lineal(nombre_archivo):
 def medir_lineal_limitada(nombre_archivo):
     arreglo = cargar_arreglo_desde_archivo(nombre_archivo)
     tiempo_inicio = time.time()
-    r = busqueda_lineal_limitada(arreglo, 60671341, len(arreglo))
+    r = busqueda_lineal_limitada(arreglo, 99982068, len(arreglo))
     print(f"tiempo 2: {r}")
     tiempo_fin = time.time()
     tiempo_total = tiempo_fin - tiempo_inicio
@@ -32,7 +32,7 @@ def medir_lineal_limitada(nombre_archivo):
 def medir_busqueda_binaria(nombre_archivo):
     arreglo = cargar_arreglo_desde_archivo(nombre_archivo)
     tiempo_inicio = time.time()
-    r = busqueda_binaria(arreglo, 60671341)
+    r = busqueda_binaria(arreglo, 99982068)
     print(f"tiempo 3: {r}")
     tiempo_fin = time.time()
     tiempo_total = tiempo_fin - tiempo_inicio
@@ -42,7 +42,7 @@ def medir_busqueda_binaria(nombre_archivo):
 def medir_busqueda_porSaltos(nombre_archivo):
     arreglo = cargar_arreglo_desde_archivo(nombre_archivo)
     tiempo_inicio = time.time()
-    r = busqueda_por_saltos(arreglo, 60671341)
+    r = busqueda_por_saltos(arreglo, 99982068)
     print(f"tiempo 4: {r}")
     tiempo_fin = time.time()
     tiempo_total = tiempo_fin - tiempo_inicio
@@ -70,24 +70,27 @@ def graficar_tiempos(tiempos):
 # Función principal para ejecutar los algoritmos y ordenar los tiempos
 def main():
     nombre_archivo = 'arreglo_10000.txt'
-    tamano = 1000000  # Cambiar a 100000 o 1000000 para otras pruebas
+    nombre_archivo_O = 'ordenado_arreglo_10000.txt'
+    tamano = 10000  # Cambiar a 100000 o 1000000 para otras pruebas
 
-    # Generar y guardar el arreglo en un archivo
+    #Generar y guardar el arreglo en un archivo
     #generar_y_guardar_arreglo(tamano, nombre_archivo)
-
+    arreglo = cargar_arreglo_desde_archivo(nombre_archivo)
+    arreglo_ordenado = ordenar_con_quicksort(arreglo)
+    guardar_arreglo_ordenado(arreglo_ordenado, nombre_archivo)
     # Ejecutar las pruebas y obtener los tiempos
     tiempos = []
     
-    tiempo_lineal = medir_busqueda_lineal(nombre_archivo)
+    tiempo_lineal = medir_busqueda_lineal(nombre_archivo_O)
     tiempos.append(("Busqueda lineal ", tiempo_lineal))
 
-    tiempo_limitada = medir_lineal_limitada(nombre_archivo)
+    tiempo_limitada = medir_lineal_limitada(nombre_archivo_O)
     tiempos.append(("Busqueda lineal limitada ", tiempo_limitada))
 
-    tiempo_binaria = medir_busqueda_binaria(nombre_archivo)
+    tiempo_binaria = medir_busqueda_binaria(nombre_archivo_O)
     tiempos.append(("Busqueda binaria ", tiempo_binaria))
 
-    tiempo_porSaltos = medir_busqueda_porSaltos(nombre_archivo)
+    tiempo_porSaltos = medir_busqueda_porSaltos(nombre_archivo_O)
     tiempos.append(("Busqueda por saltos ", tiempo_porSaltos))
 #-----------------------------------------------------------------------
 

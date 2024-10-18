@@ -87,7 +87,7 @@ def graficar_tiempos(tiempos):
 # Función principal para ejecutar los algoritmos y ordenar los tiempos
 def main():
     nombre_archivo = 'arreglo_10000.txt'
-    tamano = 1000000  # Cambiar a 100000 o 1000000 para otras pruebas
+    tamano = 10000  # Cambiar a 100000 o 1000000 para otras pruebas
 
     # Generar y guardar el arreglo en un archivo
     generar_y_guardar_arreglo(tamano, nombre_archivo)
@@ -95,23 +95,23 @@ def main():
     # Ejecutar las pruebas y obtener los tiempos
     tiempos = []
     
-    tiempo_burbuja = medir_ordenamiento_burbuja(nombre_archivo)
-    tiempos.append(("Ordenamiento Burbuja", tiempo_burbuja))
+#    tiempo_burbuja = medir_ordenamiento_burbuja(nombre_archivo)
+#    tiempos.append(("Ordenamiento Burbuja", tiempo_burbuja))
     
-    tiempo_quicksort = medir_quicksort(nombre_archivo)
-    tiempos.append(("Quicksort", tiempo_quicksort))
+#    tiempo_quicksort = medir_quicksort(nombre_archivo)
+#    tiempos.append(("Quicksort", tiempo_quicksort))
 
-    tiempo_pigeonhole = medir_pigeonholesort(nombre_archivo)
-    tiempos.append(("Ordenamiento Pigeonhole", tiempo_pigeonhole))
+#    tiempo_pigeonhole = medir_pigeonholesort(nombre_archivo)
+#    tiempos.append(("Ordenamiento Pigeonhole", tiempo_pigeonhole))
 
-    tiempo_Merge = medir_mergesort(nombre_archivo)
-    tiempos.append(("Ordenamiento Merge", tiempo_Merge))
+#    tiempo_Merge = medir_mergesort(nombre_archivo)
+#    tiempos.append(("Ordenamiento Merge", tiempo_Merge))
 
-    tiempo_Bitonic = medir_bitonicsort(nombre_archivo)
-    tiempos.append(("Ordenamiento Bitonic", tiempo_Bitonic))
+#    tiempo_Bitonic = medir_bitonicsort(nombre_archivo)
+#    tiempos.append(("Ordenamiento Bitonic", tiempo_Bitonic))
 
-#    tiempo_stooge = medir_stoogesort(nombre_archivo)
-#    tiempos.append(("Ordenamiento Stooge", tiempo_stooge))
+    tiempo_stooge = medir_stoogesort(nombre_archivo)
+    tiempos.append(("Ordenamiento Stooge", tiempo_stooge))
 
 #-----------------------------------------------------------------------
 
